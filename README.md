@@ -1,2 +1,2 @@
 # ovh-backup
-Create a backup of your own OVH Cloud VPS
+Create a Snapshot Backup of your own OVH Cloud VPS
