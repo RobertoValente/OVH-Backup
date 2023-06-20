@@ -29,5 +29,23 @@ nano .env
 # Run the project
 npm start
 ```
-- For **change the time of any action**, feel free to change <code> * * * * * </code>  of the lines that contains it.
+- For **change the time of any action**, feel free to change <code>* * * * *</code>  of the lines that contains it.
+```js
+// => Examples:
+
+cron.schedule('* * * * *', () => {
+    let msg = `Executed every minute`;
+    let cronType = 'EveryMinute';
+    // Code here
+    sendWhatsappMessage(msg, cronType);
+}, {scheduled: true, timezone: 'Europe/Lisbon'});
+
+cron.schedule('0 0 0 ? * * *', () => {
+    let msg = `Executed one time per day at midnight`;
+    let cronType = 'ExecutedAtMidnight';
+    // Code here
+    sendWhatsappMessage(msg, cronType);
+}, {scheduled: true, timezone: 'Europe/Lisbon'});
+
+```
 - **To help you get the exacly time**, visit the site: https://www.freeformatter.com/cron-expression-generator-quartz.html
