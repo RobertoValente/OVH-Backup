@@ -25,6 +25,9 @@ mv .env.example .env
 
 # Change "XXXXXX" to the correct information (tips inside of '.env')
 nano .env
-```
 
-<br> ⭐ **Don't forget to Start this repository if you like it!**
+# Run the project
+npm start
+```
+- For **change the time of any action**, feel free to change <code> * * * * * </code>  of the lines that contains it.
+- **To help you get the exacly time**, visit the site: https://www.freeformatter.com/cron-expression-generator-quartz.html
