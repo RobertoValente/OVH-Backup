@@ -19,10 +19,12 @@ cd ovh-backup
 
 # Install all dependencies of the project
 npm install
-```
 
-## Setup
-1. Rename <code>.env.example</code> to <code>.env</code>
-2. View the following [Post](https://help.ovhcloud.com/csm/en-api-getting-started-ovhcloud-api?id=kb_article_view&sysparm_article=KB0042777) of "First Steps with the OVHcloud APIs" by [OVH Cloud](www.ovhcloud.com/)
+# Rename the file '.env.example' to '.env'
+mv .env.example .env
+
+# Change "XXXXXX" to the correct information (tips inside of '.env')
+nano .env
+```
 
 <br> ⭐ **Don't forget to Start this repository if you like it!**
