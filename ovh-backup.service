@@ -1,0 +1,15 @@
+[Unit]
+Description=ovb-backup
+
+[Service]
+ExecStart=/home/roberto/ovh-backup/index.js
+Restart=always
+User=nobody
+# Note Debian/Ubuntu uses 'nogroup', RHEL/Fedora uses 'nobody'
+Group=nogroup
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/home/roberto/ovh-backup/
+
+[Install]
+WantedBy=multi-user.target
