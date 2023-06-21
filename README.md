@@ -49,3 +49,25 @@ cron.schedule('0 0 0 ? * * *', () => {
 
 ```
 - **To help you get the exacly time**, visit the site: https://www.freeformatter.com/cron-expression-generator-quartz.html
+
+# 📌 To Run in Background and Infinitely
+<em>*can be different for other devices/operating systems than Raspberry Pi Zero W</em>
+```console
+# Inside of 'ovh-backup.service', replace '<path>' to the current path of your project
+# To see your current path, execute 'pwd' in terminal
+
+# Add execetuable permission to 'index.js'
+chmod +x index.js
+
+# Copy the service file to '/etc/systemd/system'
+sudo cp ovh-backup.service /etc/systemd/system
+
+# Start the service
+systemctl start ovh-backup.service
+
+# To launch the service in boot
+systemctl enable ovh-backup.service
+
+# To you see the logs
+journalctl -u ovh-backup.service
+```
