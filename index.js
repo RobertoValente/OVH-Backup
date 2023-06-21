@@ -52,6 +52,10 @@ cron.schedule('30 * * * *', () => {
     sendWhatsappMessage(msg, cronType);
 }, {scheduled: true, timezone: 'Europe/Lisbon'});
 
+// [ ] > Criar um CronJob de Teste/Exemplo
+// [ ] > Criar outro CronJob Comentado para ser outro Exemplo
+// [ ] > Dar instruções de como criar e editar horário de outro, 
+
 function sendWhatsappMessage(msg, cronType) {
     axios.post(`http://api.callmebot.com/whatsapp.php?source=web&phone=${process.env.PHONE}&apikey=${process.env.KEY}&text=${encodeURI(msg)}`)
     .then(res => {
