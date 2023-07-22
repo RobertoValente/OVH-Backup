@@ -2,10 +2,10 @@
 
 echo '/* =============================================== */'
 echo '/* == Updating and Installing What Is Necessary == */'
-sudo apt update && sudo apt upgrade
-sudo apt install nodejs
-sudo apt install npm
-sudo apt install git
+sudo apt update -y && sudo apt upgrade -y
+sudo apt install nodejs -y
+sudo apt install npm -y
+sudo apt install git -y
 echo '/* =============================================== */'
 echo '/* =============================================== */'
 
