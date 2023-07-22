@@ -1,10 +1,25 @@
 #!/bin/bash
 
+echo '/* =============================================== */'
+echo '/* == Updating and Installing What Is Necessary == */'
+sudo apt update && sudo apt upgrade
+sudo apt install nodejs
+sudo apt install npm
+sudo apt install git
+echo '/* =============================================== */'
+echo '/* =============================================== */'
+
+echo ' '
+echo ' '
+
+echo '/* =============================================== */'
+echo '/* ================== HD Setup =================== */'
+
 lsblk
 read -p 'Disk: ' disk
 mount | grep $disk
 
-echo '/* === Type the letters in the following order === */'
+echo '/* === Type The Letters In The Following Order === */'
 echo '> g'
 echo '> p'
 echo '> n + Press <Enter> + Press <Enter> + Press <Enter>'
