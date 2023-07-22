@@ -11,52 +11,19 @@ const ovh = require('ovh')({
     endpoint: process.env.END_POINT,
 });
 
-cron.schedule('* * * * *', () => {
-    let msg = `😎 Funcionou!`;
-    let cronType = 'Teste';
-
-    ovh.request('POST', `/vps/${process.env.SERVICE_NAME}/createSnapshot`, function (err, me) {
-        console.log(err || me); //criar com o dia de hoje
-    });
-
-    ovh.request('GET', `/vps/${process.env.SERVICE_NAME}/snapshot`, function (err, me) {
-        console.log(err || me);
-    });
-
-    ovh.request('GET', `/vps/${process.env.SERVICE_NAME}/snapshot/download`, function (err, me) {
-        console.log(err || me);
-    });
-
-    /* 30Min in 30Min:
-    ovh.request('GET', `/vps/${process.env.SERVICE_NAME}/status`, function (err, me) {
-        console.log(err || me);
-    });
-
-    ovh.request('GET', `/vps/${process.env.SERVICE_NAME}/statistics`, function (err, me) {
-        console.log(err || me);
-    });
-    */
-
-    sendWhatsappMessage(msg, cronType);
-}, {scheduled: true, timezone: 'Europe/Lisbon'});
-
-cron.schedule('30 52 09 * * * *', () => {
-    let msg = `😎 Funcionou!`;
+cron.schedule('0 15 5 * * *', () => {
+    let msg = `> CronJob de Hora do Backup!`;
     let cronType = 'SpecificHour';
 
     sendWhatsappMessage(msg, cronType);
 }, {scheduled: true, timezone: 'Europe/Lisbon'});
 
-cron.schedule('30 * * * *', () => {
-    let msg = `😎 Funcionou!`;
-    let cronType = 'Every30Min';
+cron.schedule('0 0 * * * *', () => {
+    let msg = `> CronJob de Hora em Hora!`;
+    let cronType = 'EveryHour';
 
     sendWhatsappMessage(msg, cronType);
 }, {scheduled: true, timezone: 'Europe/Lisbon'});
-
-// [ ] > Criar um CronJob de Teste/Exemplo
-// [ ] > Criar outro CronJob Comentado para ser outro Exemplo
-// [ ] > Dar instruções de como criar e editar horário de outro, 
 
 function sendWhatsappMessage(msg, cronType) {
     axios.post(`http://api.callmebot.com/whatsapp.php?source=web&phone=${process.env.PHONE}&apikey=${process.env.KEY}&text=${encodeURI(msg)}`)
