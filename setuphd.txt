@@ -1,0 +1,32 @@
+lsblk
+mount | grep <disco>
+sudo fdisk /dev/<disco>
+   -> g
+   -> p
+   -> n + Enter + Enter + Enter
+   -> w
+sudo mkfs.exfat -n "<nome do disco>" /dev/<disco>
+df -h
+sudo mkdir /media/<nome do disco>
+sudo chown -R <user>:<user> /media/<nome da pasta>
+sudo mount /dev/<disco> /media/<nome do disco>/ -o uid=<user>,gid=<user>
+lsblk
+df -h
+sudo umount /media/<nome do disco>
+ls -l /dev/disk/by-uuid/
+sudo nano /etc/fstab
+   -> UUID=65FD-3020 /media/ValeySpace_Backups/ exfat auto,nofail,noatime,users,rw,uid=<user>,gid=<user> 0 0
+   -> Ctrl + X, Ctrl + Y, Enter
+sudo reboot
+cd /media/<nome da pasta>
+
+======
+
+sudo apt update && sudo apt upgrade
+sudo apt install nodejs
+sudo apt install npm
+sudo apt install git
+
+=====
+
+https://stackoverflow.com/questions/4018154/how-do-i-run-a-node-js-app-as-a-background-service
