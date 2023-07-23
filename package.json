@@ -21,7 +21,7 @@
   "dependencies": {
     "axios": "^1.4.0",
     "dotenv": "^16.3.1",
-    "node-cron": "^3.0.2",
+    "node-cron": "^3.0.0",
     "ovh": "^2.0.3"
   }
 }
