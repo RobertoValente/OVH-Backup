@@ -58,7 +58,7 @@ echo ' '
 echo ' '
 sudo service vsftpd restart
 df -h
-sudo umount /media/$folderdisk
+#sudo umount /media/$folderdisk
 ls -l /dev/disk/by-uuid/
 read -p 'UUID of Disk: ' uuid
 echo ' '
