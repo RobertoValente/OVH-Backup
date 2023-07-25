@@ -2,22 +2,22 @@
 
 echo "Installing the necessary packages..."
 
-sudo apt update -y && sudo apt upgrade -y > /dev/null
+sudo apt update -y && sudo apt upgrade -y
 echo "Packages has been updated and upgraded"
 
-sudo apt install nodejs -y > /dev/null
+sudo apt install nodejs -y
 echo "Package NodeJS Installed"
 
-sudo apt install npm -y > /dev/null
+sudo apt install npm -y
 echo "Package NPM Installed"
 
-sudo apt install git -y > /dev/null
+sudo apt install git -y
 echo "Package GIT Installed"
 
-sudo apt install vsftpd -y > /dev/null
+sudo apt install vsftpd -y
 echo "Package VSFTPD Installed"
 
-sudo apt install ntfs-3g -y > /dev/null
+sudo apt install ntfs-3g -y
 echo "Package NTFTS-3G Installed"
 
 echo " "
