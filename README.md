@@ -9,7 +9,7 @@ Have you ever try to create an automatic way to backup your own snapshots from y
 |    Git   |   [Download Git](https://git-scm.com/downloads)   |        v2.30.2       |    ✅   |
 
 # 📌 How to use
-<em>*can be different for other devices/operating systems than Raspberry Pi Zero W</em>
+<em>*can be different for other devices/operating systems than Raspberry Pi Zero 2W</em>
 ```console
 # Clone this repository
 git clone https://github.com/RobertoValente/ovh-backup.git
