@@ -1,5 +1,5 @@
 # OVH-Backup
-Have you ever try to create an automatic way to backup your own snapshots from your [OVH Cloud](https://github.com/ovh) VPS? Well, me too. That's why I decided to create this project that uses a Raspberry Pi Zero W to create, get and download the snapshot to an external hard drive connected to the Raspberry!
+Have you ever try to create an automatic way to backup your own snapshots from your [OVH Cloud](https://github.com/ovh) VPS? Well, me too. That's why I decided to create this project that uses a Raspberry Pi Zero 2W to create, get and download the snapshot to an external hard drive connected to the Raspberry!
 
 # 📌 Requirements
 | Software |                   Donwload Link                   | Older Version Tested | Status |
