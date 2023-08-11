@@ -15,7 +15,13 @@ Have you ever try to create an automatic way to backup your own snapshots from y
 git clone https://github.com/RobertoValente/ovh-backup.git
 
 # Navigate to the folder
-cd ovh-backup
+cd OVH-Backup
+
+# Make the shell script executable
+chmod +x setupRaspberry.sh
+
+# Execute the script and follow the instructions
+./setupRaspberry.sh
 
 # Install all dependencies of the project
 npm install
