@@ -2,6 +2,8 @@
 
 const cron = require('node-cron');
 const axios = require('axios');
+const https = require('https');
+const fs = require('fs');
 require('dotenv').config();
 
 const ovh = require('ovh')({
@@ -38,7 +40,13 @@ cron.schedule('0 30 5 * * *', () => {
         if(err) return sendWebhook({content: '```An error occurred while trying to get a link to download the Snapshot...```'}, cronType);
 
         sendWebhook({content: `\`\`\`Downloading the Snapshot (${(data.size / (1000 * 1000 * 1000)).toFixed(2)} GB) from OVH.com to External Hard Drive...\`\`\`➜ If you want to download it manually, **[click here](${data.url})**.`}, cronType);
-        // FALTA FAZER A PARTE DE DOWNLOAD PARA O HD
+        /*let file = fs.createWriteStream(`/media/${process.env.FOLDER_DISK}/${new Date().toLocaleString('pt', {timeZone:>        https.get(data.url, function(response) {
+            response.pipe(file);
+            file.on('finish', function() {
+                file.close();
+                sendWebhook({content: '```Download Complete!```'}, cronType);
+            });
+        });*/
     });
 }, {scheduled: true, timezone: 'Europe/Lisbon'});
 
