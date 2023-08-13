@@ -31,7 +31,7 @@ cron.schedule('0 5 5 * * *', () => {
             sendWebhook({content: '```Creating a new snapshot in OVH.com ...```'}, cronType);
         });
     }, 15000);
-}, {scheduled: true, timezone: 'Europe/Lisbon'});
+});
 
 cron.schedule('0 30 5 * * *', () => {
     let cronType = 'SnapshotDownload';
@@ -48,7 +48,7 @@ cron.schedule('0 30 5 * * *', () => {
             });
         });*/
     });
-}, {scheduled: true, timezone: 'Europe/Lisbon'});
+});
 
 cron.schedule('0 0 * * * *', async () => {
     let cronType = 'StatusVPS';
@@ -68,7 +68,7 @@ cron.schedule('0 0 * * * *', async () => {
             sendWebhook({content: '```Your VPS Service Name is Wrong!```'}, cronType);
         }
     });
-}, {scheduled: true, timezone: 'Europe/Lisbon'});
+});
 
 function sendWebhook(msg, cronType) {
     axios({ method: 'POST', url: process.env.DISCORD_WEBHOOK, headers: { 'Content-Type': 'application/json' }, data: JSON.stringify(msg) })
